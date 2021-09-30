@@ -72,7 +72,7 @@ model = tf.keras.Sequential([
 ])
 </div></code></code></pre>
 <p>Here are some examples of the model working on various images:
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\summary_images\manyclothing.png" alt="image"></p>
+<img src="atip-module1-summary\summary_images\manyclothing.png" alt="image"></p>
 <h2 id="basic-text-classification">Basic Text Classification</h2>
 <p>The second tutorial teaches binary text classification using an IMDB dataset. The task is to determine whether the sentiment of a movie review is positive or negative. So it seems like a simpler task than the first tutorial, but the dataset requires more preprocessing, making it a bit more complicated.</p>
 <p>Preprocessing includes standardization, tokenization, and vectorization:</p>
@@ -135,7 +135,7 @@ model = tf.keras.Sequential([
     layers.Dense(1)])
 </div></code></code></pre>
 <p>Finally, the model is trained and evaluated:</p>
-<p><img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\summary_images\txtgraph.png" alt="image"></p>
+<p><img src="atip-module1-summary\summary_images\txtgraph.png" alt="image"></p>
 <p>Also part of this tutorial, I completed an exercise where the IMDB dataset is replaced with a dataset of Stack Overflow questions, with the task being to classify the questions as being about Python, Java, C#, or Javascript. The dataset was similarly structured, so it only took changing a few lines of code to adapt the model from a binary classifier into a multi-class classifier.</p>
 <h2 id="deep-dream">Deep Dream</h2>
 <p>For the third tutorial, I decided to look into some more advanced techniques. Deep Dream is a generative technique where a pre-trained image classification network looks at an image and &quot;hallucinates&quot; patterns in the image based on the data it was trained on.</p>
@@ -150,12 +150,12 @@ model = tf.keras.Sequential([
 </ol>
 <p>You can also start with a small image, run the algorithm, and scale it up a few times (called octaves), which produces more detailed and vivid patterns. I used the tutorial's code to do this, because it makes your output much better.</p>
 <p>Here are some of the images I created using InceptionV3:</p>
-<p><img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\doggy%206%207.png" alt="image">
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\brekky%202%205.png" alt="image">
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\cone%203%205.png" alt="image">
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\art%201%202.png" alt="image">
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\mushroom%204%207.png" alt="image">
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\frutta%203%206.png" alt="image"></p>
+<p><img src="atip-module1-summary\deepdream%20outputs\doggy%206%207.png" alt="image">
+<img src="atip-module1-summary\deepdream%20outputs\brekky%202%205.png" alt="image">
+<img src="atip-module1-summary\deepdream%20outputs\cone%203%205.png" alt="image">
+<img src="atip-module1-summary\deepdream%20outputs\art%201%202.png" alt="image">
+<img src="atip-module1-summary\deepdream%20outputs\mushroom%204%207.png" alt="image">
+<img src="atip-module1-summary\deepdream%20outputs\frutta%203%206.png" alt="image"></p>
 <p>The last image is of Caravaggio's <em>Basket of Fruit</em>. I decided to use that same image again, but change the pre-trained model to a different one. I looked around on the internet and found one called VGG16.</p>
 <pre><code><code><div>base_model = tf.keras.applications.VGG16(include_top=False, weights='imagenet')
 </div></code></code></pre>
@@ -171,7 +171,7 @@ layers = [base_model.get_layer(name).output for name in names]
 dream_model = tf.keras.Model(inputs=base_model.input, outputs=layers)
 </div></code></code></pre>
 <p>It ran for about ten minutes, a very long time compared to InceptionV3, but I got a very vivid output image:
-<img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\deepdream%20outputs\frutta%20VGG16%204%205.png" alt="image"></p>
+<img src="atip-module1-summary\deepdream%20outputs\frutta%20VGG16%204%205.png" alt="image"></p>
 <p>You can barely see the original painting in the dream-ified version. There are suggestions of lots of dog faces and twisting snake bodies. Very cool!</p>
 <h2 id="choosing-my-own-dataset">Choosing my own dataset</h2>
 <p>For a &quot;final project&quot; of sorts, I decided to download a new dataset from the internet and see how far I could get without following any particular tutorial.</p>
@@ -201,7 +201,7 @@ connect4_model.compile(loss = tf.losses.MeanSquaredError(),
 )
 </div></code></code></pre>
 <p>I trained and evaluated the model, and plotted the progress:</p>
-<p><img src="file:///e:\2021-2022 senior year\ATiP\module 1 - tensorflow beginner\summary_images\connect4graph.png" alt="image"></p>
+<p><img src="atip-module1-summary\summary_images\connect4graph.png" alt="image"></p>
 <p>The model didn't perform well, which could just be because the problem is hard to solve, or it could be because I didn't choose the right model architecture. It did do something, though, because the loss clearly decreases as the model trains.</p>
 <h2 id="future-learning-modules">Future Learning Modules</h2>
 <p>So I'll consider this project a success, although I still have much more to learn. Perhaps I'll do a follow-up to this module later this semester, in which I go deeper into some of the algorithms that are used in machine learning and why they are useful.</p>
